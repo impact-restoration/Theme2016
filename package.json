@@ -1,0 +1,27 @@
+{
+  "name": "ImpactRestoration",
+  "version": "0.1.0",
+  "authors": [
+    "Joel Worsham <joel@realbigmarketing.com>"
+  ],
+  "description": "Theme for the 2016 Impact Restoration website..",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/realbig/TH_IMPACT_REST.git"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp sass"
+  },
+  "private": true,
+  "dependencies": {
+    "gulp-autoprefixer": "^3.1.0"
+  }
+}
