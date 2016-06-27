@@ -312,24 +312,10 @@ body.home {
   .home-getintouch {
     .callout-prompt {
       .container {
-        @include breakpoint(medium) {
-          float: right;
-          width: 100%;
-          max-width: 300px;
-        }
-
         input {
           width: 100%;
           border-color: $secondary-color;
         }
-      }
-    }
-
-    input[type="submit"] {
-      background: $secondary-color;
-
-      &:hover {
-        background: darken($secondary-color, 10%);
       }
     }
   }

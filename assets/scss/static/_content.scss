@@ -5,3 +5,10 @@ The main page content section
 */
 
 @import "../settings";
+
+#site-content {
+  //margin-top: map-get($grid-column-gutter, 'medium');
+  //margin-bottom: map-get($grid-column-gutter, 'medium');
+  min-height: 400px;
+  min-height: 60vh;
+}

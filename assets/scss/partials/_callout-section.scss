@@ -16,6 +16,14 @@ $callout-section-colors: (
 );
 
 .callout-section {
+  &.flush-top {
+    margin-top: 0;
+  }
+
+  &.flush-bottom {
+    margin-bottom: 0;
+  }
+
   @each $orientation in $callout-section-orientations {
     &.#{$orientation} {
       @include callout-section-structure($orientation, (300px));
