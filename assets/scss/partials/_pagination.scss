@@ -1,0 +1,67 @@
+/*
+Pagination nav.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+
+.pagination-section {
+  @include clearfix;
+  margin-top: map-get($grid-column-gutter, "medium");
+  margin-bottom: map-get($grid-column-gutter, "medium");
+  font-weight: bold;
+  font-size: 1.5em;
+
+  a {
+    font-weight: bold;
+    margin-#{$global-right}: $pagination-item-spacing;
+    border-radius: $pagination-radius;
+
+    @if $pagination-mobile-items {
+      display: inline-block;
+    }
+    @else {
+      display: none;
+
+      &:last-child,
+      &:first-child {
+        display: inline-block;
+      }
+
+      @include breakpoint(medium) {
+        display: inline-block;
+      }
+    }
+  }
+
+  a,
+  button {
+    color: $pagination-item-color;
+    padding: $pagination-item-padding;
+    border-radius: $global-radius;
+
+    &:hover {
+      background: $pagination-item-background-hover;
+    }
+  }
+
+  .current {
+    @include pagination-item-current;
+  }
+
+  .disabled {
+    @include pagination-item-disabled;
+  }
+
+  .prev::before {
+    content: '\00ab';
+    display: inline-block;
+    margin-#{$global-right}: 0.5rem;
+  }
+
+  .next::after {
+    content: '\00bb';
+    display: inline-block;
+    margin-#{$global-left}: 0.5rem;
+  }
+}

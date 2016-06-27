@@ -10,3 +10,7 @@ Adds extra utility classes.
   width: 100%;
   max-width: none;
 }
+
+.screen-reader-text {
+  @include element-invisible;
+}

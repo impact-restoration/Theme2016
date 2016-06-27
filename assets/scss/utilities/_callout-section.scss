@@ -8,6 +8,15 @@ Callout section.
 
 @mixin callout-section-structure($orientation: "left", $heights: (500px, 50%, 50vh)) {
   margin-bottom: map-get($grid-column-gutter, "medium");
+  text-align: center;
+
+  @include breakpoint(medium) {
+    text-align: left;
+  }
+
+  &.flush-bottom {
+    margin-bottom: 0;
+  }
 
   .container {
     @include breakpoint(medium) {
@@ -41,6 +50,10 @@ Callout section.
 
     h2 {
       border-bottom: 5px solid;
+
+      &.no-underline {
+        border-bottom: none;
+      }
     }
 
     a {

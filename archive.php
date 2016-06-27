@@ -13,11 +13,36 @@ defined( 'ABSPATH' ) || die();
 get_header();
 ?>
 
-<?php if ( have_posts() ) : ?>
-	<?php while ( have_posts() ) : ?>
-	<?php endwhile; ?>;
-<?php else : ?>
-<?php endif; ?>
+	<div class="row">
+		<div class="columns small-12">
+			<?php if ( have_posts() ) : ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<h1 class="post-title">
+							<a href="<?php the_permalink(); ?>">
+								<?php the_title(); ?>
+							</a>
+						</h1>
+
+						<div class="post-content">
+							<?php the_content(); ?>
+						</div>
+
+						<a href="<?php the_permalink(); ?>" class="read-more-link dark button">
+							Read More
+						</a>
+					</article>
+				<?php endwhile; ?>
+
+			<?php else : ?>
+				<p>
+					Nothing found.
+				</p>
+			<?php endif; ?>
+		</div>
+	</div>
+
+<?php impactrestoration_load_template( 'partials/pagination' ); ?>
 
 <?php
 get_footer();

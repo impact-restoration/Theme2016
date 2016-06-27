@@ -1,0 +1,30 @@
+/*
+Archive.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+
+body.archive {
+  #site-content {
+    margin-top: map-get($grid-column-gutter, "medium");
+  }
+
+  article {
+    &:not(:last-of-type) {
+      margin-bottom: map-get($grid-column-gutter, "medium");
+      padding-bottom: map-get($grid-column-gutter, "medium");
+      border-bottom: 5px solid;
+    }
+
+    .post-title {
+      a {
+        color: inherit;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -35,7 +35,7 @@ Version: {{VERSION}}
 @include foundation-media-object;
 @include foundation-off-canvas;
 @include foundation-orbit;
-@include foundation-pagination;
+//@include foundation-pagination;
 @include foundation-progress-bar;
 // @include foundation-progress-element;
 // @include foundation-meter-element;
@@ -66,6 +66,7 @@ Version: {{VERSION}}
 @import "partials/forms";
 @import "partials/gallery";
 @import "partials/page-divider";
+@import "partials/pagination";
 @import "partials/services-list";
 
 // Static
@@ -75,6 +76,7 @@ Version: {{VERSION}}
 @import "static/sidebar";
 
 // Templates
+@import "templates/archive";
 @import "templates/archive-service";
 @import "templates/home";
 @import "templates/single-service";
