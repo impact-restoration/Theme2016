@@ -1,0 +1,19 @@
+/*
+Single post.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+
+body.single {
+  .post-header {
+    .callout-prompt {
+
+      background-image: linear-gradient(
+                      90deg,
+                      $primary-color 0%,
+                      $secondary-color 100%
+      );
+    }
+  }
+}
