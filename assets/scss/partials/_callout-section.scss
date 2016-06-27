@@ -1,0 +1,30 @@
+/*
+Callout section.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+@import "../utilities/callout-section";
+@import "../utilities/triangle";
+
+$callout-section-orientations: (left, right);
+
+$callout-section-colors: (
+        primary: $primary-color,
+        secondary: $secondary-color,
+        black: $black,
+);
+
+.callout-section {
+  @each $orientation in $callout-section-orientations {
+    &.#{$orientation} {
+      @include callout-section-structure($orientation, (300px));
+    }
+  }
+
+  @each $color_id, $color in $callout-section-colors {
+    &.#{$color_id} {
+      @include callout-section-style($color);
+    }
+  }
+}

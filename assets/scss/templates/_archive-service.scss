@@ -1,0 +1,107 @@
+/*
+Archive Service CPT.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+
+body.post-type-archive-service {
+  .archive-service-item {
+    &.left {
+      .archive-service-item-content {
+        @include triangle(upper-left, (350px, 60%, 60vh), (100px, 20%, 20vh));
+
+        &:before {
+          left: 100%;
+        }
+      }
+    }
+
+    &.right {
+      .archive-service-item-content {
+        @include triangle(upper-right, (350px, 60%, 60vh), (100px, 20%, 20vh));
+
+        &:before {
+          right: 100%;
+        }
+      }
+    }
+
+    .archive-service-item-color {
+      height: 30px;
+      height: 10%;
+      height: 10vh;
+
+      @include breakpoint(medium) {
+        height: 60%;
+        height: 60vh;
+        min-height: 200px;
+      }
+
+      @include breakpoint(large) {
+        height: 50%;
+        height: 50vh;
+      }
+    }
+
+    &.right, &.left {
+      .archive-service-item-content {
+        position: relative;
+        background-color: $black;
+        height: 350px;
+        min-height: 200px;
+
+        @include breakpoint(medium) {
+          height: 60%;
+          height: 60vh;
+        }
+
+        @include breakpoint(large) {
+          height: 50%;
+          height: 50vh;
+        }
+
+        &:before {
+          position: absolute;
+          top: 0;
+          color: $black;
+
+          @include breakpoint(large) {
+            border-bottom-width: 50%;
+            border-bottom-width: 50vh;
+          }
+        }
+
+        .container {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        h1 {
+          .service-title-text {
+            color: $white;
+          }
+        }
+
+        .service-excerpt {
+          color: $white;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: underline;
+        }
+
+        .service-read-more {
+          color: $white;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

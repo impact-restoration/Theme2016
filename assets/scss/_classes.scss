@@ -1,0 +1,12 @@
+/*
+Adds extra utility classes.
+
+@since {{VERSION}}
+*/
+
+@import "settings";
+
+.row.expand {
+  width: 100%;
+  max-width: none;
+}

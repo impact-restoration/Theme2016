@@ -28,6 +28,40 @@ defined( 'ABSPATH' ) || die();
 
 <header id="site-header">
 
+	<?php if ( has_header_image() ) : ?>
+		<div class="logo">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img src="<?php header_image(); ?>"
+				     srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>"
+				     sizes="<?php echo esc_attr( $custom_header_sizes ); ?>"
+				     width="<?php echo esc_attr( get_custom_header()->width ); ?>"
+				     height="<?php echo esc_attr( get_custom_header()->height ); ?>"
+				     alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
+			</a>
+		</div>
+	<?php endif; ?>
+
+	<?php if ( has_nav_menu( 'primary' ) ) : ?>
+		<nav class="primary-nav">
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'container'      => false,
+				'depth'          => 1,
+			) );
+			?>
+		</nav>
+	<?php endif; ?>
+
+	<?php if ( $tagline = get_bloginfo( 'description' ) ) : ?>
+		<div class="clearfix"></div>
+		<div class="tagline">
+			<?php echo $tagline; ?>
+		</div>
+	<?php endif; ?>
+
+	<div class="divider"></div>
+
 </header>
 
 <section id="site-content">

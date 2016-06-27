@@ -4,3 +4,133 @@ The static site header.
 @since {{VERSION}}
 */
 @import "../settings";
+
+#site-header {
+  // Logo
+  .logo {
+    height: 80px;
+    margin: 0.5em 0.5em 0.5em;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      float: left;
+      max-width: 285px;
+      text-align: left;
+    }
+
+    img {
+      width: auto;
+      max-height: 100%;
+    }
+  }
+
+  // Menu
+  .primary-nav {
+    height: 60px;
+    margin: 0.5em 0.5em 0.5em 0;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      float: right;
+      text-align: left;
+      height: 80px;
+    }
+  }
+
+  .menu {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .menu-item {
+    display: inline-block;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    &.highlight {
+      a {
+        background: $black;
+        color: $white;
+
+        &:hover {
+          background: lighten($black, 10%);
+        }
+      }
+    }
+
+    &:not(.highlight) {
+      a {
+        position: relative;
+
+        &:after {
+          position: absolute;
+          top: 100%;
+          left: 10%;
+          width: 80%;
+          height: 4px;
+          background: $black;
+          content: '';
+          opacity: 0;
+          transition: opacity 0.3s, transform 0.3s;
+          transform: translateY(10px);
+        }
+
+        &:hover {
+          &:after {
+            opacity: 1;
+            transform: translateY(-4px)
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    color: inherit;
+  }
+
+  // Tagline
+  .tagline {
+    padding: 0.2em;
+    background: $black;
+    color: $medium-gray;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.7em;
+
+    @include breakpoint(medium) {
+      font-size: 1em;
+    }
+  }
+
+  // Divider
+  .divider {
+    position: relative;
+    height: 30px;
+    background-image: linear-gradient(
+                    90deg,
+                    darken(#EE5631, 10%) 0%,
+                    darken(#FAC0A6, 10%) 35%,
+                    darken(#F0F7FC, 10%) 73%,
+                    darken(#6DC4EE, 10%) 100%
+    );
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 15%;
+      height: 70%;
+      width: 100%;
+      background-image: linear-gradient(
+                      90deg,
+                      #EE5631 0%,
+                      #FAC0A6 35%,
+                      #F0F7FC 73%,
+                      #6DC4EE 100%
+      );
+    }
+  }
+}

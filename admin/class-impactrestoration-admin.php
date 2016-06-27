@@ -32,13 +32,22 @@ class ImpactRestoration_Admin {
 	public $metaboxes = array();
 
 	/**
+	 * Admin Customizer options.
+	 *
+	 * @since {{VERSION}}
+	 *
+	 * @var array
+	 */
+	public $customizer = array();
+
+	/**
 	 * ImpactRestoration_Admin constructor.
 	 *
 	 * @since {{VERSION}}
 	 */
 	function __construct() {
 
-		$this->require();
+		$this->require_files();
 	}
 
 	/**
@@ -46,14 +55,17 @@ class ImpactRestoration_Admin {
 	 *
 	 * @since {{VERSION}}
 	 */
-	private function require() {
+	private function require_files () {
 
 		require_once __DIR__ . '/class-impactrestoration-adminpage.php';
 		require_once __DIR__ . '/class-impactrestoration-adminmetabox.php';
+		require_once __DIR__ . '/class-impactrestoration-admincustomizer.php';
 		require_once __DIR__ . '/pages/class-impactrestoration-adminpage-settings.php';
 		require_once __DIR__ . '/extra-meta/class-impactrestoration-adminextrameta-home.php';
+		require_once __DIR__ . '/customizer/class-impactrestoration-admincustomizer-footer.php';
 
-		$this->pages['settings'] = new ImpactRestoration_AdminPage_Settings();
-		$this->metaboxes['home'] = new ImpactRestoration_AdminExtraMeta_Home();
+//		$this->pages['settings']    = new ImpactRestoration_AdminPage_Settings();
+		$this->metaboxes['home']    = new ImpactRestoration_AdminExtraMeta_Home();
+		$this->customizer['footer'] = new ImpactRestoration_AdminCustomizer_Footer();
 	}
 }

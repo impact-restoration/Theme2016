@@ -1,0 +1,18 @@
+@import "settings";
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+.button, button, input[type="submit"] {
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &.dark {
+    @include button-style($black, auto, auto);
+  }
+
+  &.medium {
+    @include button-style($light-gray, auto, auto);
+  }
+}

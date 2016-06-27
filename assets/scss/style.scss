@@ -56,16 +56,29 @@ Version: {{VERSION}}
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+@import "slick.scss";
+
+@import "base";
+@import "classes";
+
+// Partials
+@import "partials/callout-section";
+@import "partials/forms";
+@import "partials/gallery";
+@import "partials/page-divider";
+@import "partials/services-list";
+
 // Static
 @import "static/header";
 @import "static/content";
-@import "static/sidebar";
 @import "static/footer";
+@import "static/sidebar";
 
 // Templates
+@import "templates/archive-service";
+@import "templates/home";
+@import "templates/single-service";
 
 // Shortcodes
 
 // Widgets
-
-// Partials

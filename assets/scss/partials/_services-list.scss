@@ -1,0 +1,127 @@
+/*
+Services list.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+
+.services-list {
+  position: relative;
+  font-weight: bold;
+  padding: 0.5em;
+  font-size: 1em;
+
+  @include breakpoint(medium) {
+    font-size: 1.5em;
+  }
+
+  &.center {
+    @include breakpoint(medium) {
+      .services-row {
+
+        &:not(:last-of-type) {
+          margin-bottom: 0.5em;
+        }
+
+        &.in-view {
+          .services-row-item {
+            &:nth-of-type(odd) {
+              padding-right: 1.5em;
+            }
+
+            &:nth-of-type(even) {
+              padding-left: 1.5em;
+            }
+          }
+        }
+      }
+
+      .services-list-line {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .services-row-item {
+        float: left;
+        width: 50%;
+        opacity: 1;
+
+        &:nth-of-type(odd) {
+          text-align: right;
+
+          .fa.services-tick {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &.in-view {
+    .services-list-line {
+      height: 100%;
+    }
+  }
+
+  .services-row {
+    position: relative;
+    opacity: 0;
+    transition: opacity 300ms;
+
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    &.in-view {
+      opacity: 1;
+
+      .fa.services-tick {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%) scale(1);
+      }
+    }
+  }
+
+  .fa.services-tick {
+    position: absolute;
+    font-size: 1.5em;
+    background-color: $white;
+    opacity: 0;
+    width: 0.8em;
+    height: 0.8em;
+    line-height: 0.8em;
+    text-align: center;
+    border-radius: 50%;
+    margin-left: 2px;
+    left: 0;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(0.1);
+    transition: opacity 300ms, transform 300ms;
+
+    @include breakpoint(medium) {
+      margin-left: 0;
+    }
+  }
+
+  .services-list-line {
+    position: absolute;
+    background-color: $black;
+    top: 0;
+    height: 0%;
+    width: 5px;
+    transition: height 2000ms linear;
+  }
+
+  .services-row-item {
+    position: relative;
+    opacity: 0;
+    padding-left: 1em;
+    transition: opacity 300ms, padding 300ms;
+
+    &.in-view {
+      opacity: 1;
+    }
+  }
+}

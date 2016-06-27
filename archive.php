@@ -5,8 +5,6 @@
  * @since {{VERSION}}
  *
  * @package ImpactRestoration
- *
- * @global WP_Query $wp_query
  */
 
 // Don't load directly

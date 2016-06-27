@@ -16,9 +16,9 @@ class ImpactRestoration_AdminPage_Settings extends ImpactRestoration_AdminPage {
 	public $ID = 'impactrestoration-settings';
 
 	public $admin_page = array(
-		'Impact Restoration Settings',
-		'Impact Restoration Settings',
-		'edit_theme_options',
+		'page_title' => 'Impact Restoration Settings',
+		'menu_title' => 'Impact Restoration Settings',
+		'capability' => 'edit_theme_options',
 	);
 
 	public $settings = array(

@@ -21,20 +21,22 @@ if ( defined( 'THEME_VERSION' ) || defined( 'THEME_FONTS' ) ) {
 }
 
 define( 'THEME_VERSION', '{{VERSION}}' );
-define( 'THEME_FONTS', array(
+define( 'THEME_FONTS', serialize( array(
 	'font-awesome' => 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css',
-) );
-define( 'THEME_IMAGE_SIZES', array(
-	'medium-crop'  => array(
+	'open-sans'    => 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,800',
+) ) );
+define( 'THEME_IMAGE_SIZES', serialize( array(
+	'medium-crop' => array(
 		'title'  => 'Medium Crop',
 		'width'  => 500,
 		'height' => 300,
 		'crop'   => array( 'center', 'center' ),
 	),
-) );
+) ) );
 
 // Include required functionality
 require_once __DIR__ . '/admin/class-impactrestoration-admin.php';
+new ImpactRestoration_Admin();
 
 // Include shortcodes
 
@@ -48,6 +50,10 @@ add_action( 'wp_enqueue_scripts', 'impactrestoration_load_scripts' );
 add_action( 'admin_enqueue_scripts', 'impactrestoration_load_admin_scripts' );
 add_action( 'after_setup_theme', 'impactrestoration_load_nav_menus' );
 add_action( 'widgets_init', 'impactrestoration_load_sidebars' );
+add_filter( 'excerpt_length', 'impactrestoration_custom_excerpt_length', 999 );
+add_filter( 'use_default_gallery_style', '__return_false' );
+add_filter( 'shortcode_atts_gallery', 'impactrestoration_gallery_atts' );
+add_filter( 'gallery_style', 'impactrestoration_gallery_html' );
 
 /**
  * Setup theme properties and stuff.
@@ -57,8 +63,8 @@ add_action( 'widgets_init', 'impactrestoration_load_sidebars' );
 function impactrestoration_setup_theme() {
 
 	// Image sizes
-	if ( ! empty( THEME_IMAGE_SIZES ) ) {
-		foreach ( THEME_IMAGE_SIZES as $ID => $size ) {
+	if ( ! empty( unserialize( THEME_IMAGE_SIZES ) ) ) {
+		foreach ( unserialize( THEME_IMAGE_SIZES ) as $ID => $size ) {
 			add_image_size( $ID, $size['width'], $size['height'], $size['crop'] );
 		}
 	}
@@ -67,6 +73,8 @@ function impactrestoration_setup_theme() {
 	add_theme_support( 'html5' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'favicon' );
+	add_theme_support( 'custom-header' );
+//	add_theme_support( 'custom-logo' );
 
 	// Allow shortcodes in text widget
 	add_filter( 'widget_text', 'do_shortcode' );
@@ -83,8 +91,8 @@ function impactrestoration_setup_theme() {
  */
 function impactrestoration_add_image_sizes( $sizes ) {
 
-	if ( ! empty( THEME_IMAGE_SIZES ) ) {
-		$sizes = array_merge( $sizes, wp_list_pluck( THEME_IMAGE_SIZES, 'ID', 'title' ) );
+	if ( ! empty( unserialize( THEME_IMAGE_SIZES ) ) ) {
+		$sizes = array_merge( $sizes, wp_list_pluck( unserialize( THEME_IMAGE_SIZES ), 'ID', 'title' ) );
 	}
 
 	return $sizes;
@@ -123,13 +131,13 @@ function impactrestoration_register_scripts() {
 //	);
 
 	// Theme script
-//	wp_register_script(
-//		'impactrestoration',
-//		get_template_directory_uri() . '/script.js',
-//		array( 'jquery' ),
-//		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION,
-//		true
-//	);
+	wp_register_script(
+		'impactrestoration',
+		get_template_directory_uri() . '/script.js',
+		array( 'jquery' ),
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION,
+		true
+	);
 
 //	wp_register_script(
 //		'impactrestoration-admin',
@@ -144,8 +152,8 @@ function impactrestoration_register_scripts() {
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
 	) );
 
-	if ( ! empty( $impactrestoration_fonts ) ) {
-		foreach ( $impactrestoration_fonts as $ID => $link ) {
+	if ( ! empty( unserialize( THEME_FONTS ) ) ) {
+		foreach ( unserialize( THEME_FONTS ) as $ID => $link ) {
 			wp_register_style(
 				'impactrestoration' . "-font-$ID",
 				$link
@@ -167,10 +175,10 @@ function impactrestoration_load_scripts() {
 //	wp_enqueue_style( 'impactrestoration-print' );
 
 	// Theme script
-//	wp_enqueue_script( 'impactrestoration' );
+	wp_enqueue_script( 'impactrestoration' );
 
-	if ( ! empty( THEME_FONTS ) ) {
-		foreach ( THEME_FONTS as $ID => $link ) {
+	if ( ! empty( unserialize( THEME_FONTS ) ) ) {
+		foreach ( unserialize( THEME_FONTS ) as $ID => $link ) {
 			wp_enqueue_style( 'impactrestoration' . "-font-$ID" );
 		}
 	}
@@ -194,8 +202,8 @@ function impactrestoration_load_admin_scripts() {
  */
 function impactrestoration_load_nav_menus() {
 
-	// Primary
 	register_nav_menu( 'primary', 'Primary Navigation Menu' );
+	register_nav_menu( 'footer', 'Footer Navigation Menu' );
 }
 
 /**
@@ -248,4 +256,102 @@ function impactrestoration_get_template( $template ) {
 	$template = apply_filters( 'impactrestoration_get_template', $template );
 
 	return $template;
+}
+
+/**
+ * All available icons for Impact Restoration.
+ *
+ * @since {{VERSION}}
+ *
+ * @return array Icons with classname as key and name as value.
+ */
+function impactrestoration_icons() {
+
+	return array(
+		'ir-fire'  => 'Fire',
+		'ir-water' => 'Water',
+		'ir-hail'  => 'Hail',
+		'ir-wind'  => 'Wind',
+	);
+}
+
+/**
+ * Filter the except length to 20 characters.
+ *
+ * @param int $length Excerpt length.
+ *
+ * @return int (Maybe) modified excerpt length.
+ */
+function impactrestoration_custom_excerpt_length( $length ) {
+	return 35;
+}
+
+/**
+ * Modify the gallery to have "unlimitted" columns.
+ *
+ * @since {{VERSION}}
+ * @access private
+ *
+ * @param $atts
+ *
+ * @return mixed
+ */
+function impactrestoration_gallery_atts( $atts ) {
+
+	$atts['columns'] = 0;
+	$atts['link']    = 'file';
+
+	return $atts;
+}
+
+/**
+ * Append gallery extra HTML.
+ *
+ * @since {{VERSION}}
+ * @access private
+ *
+ * @param $output
+ *
+ * @return string
+ */
+function impactrestoration_gallery_html( $output ) {
+
+	/**
+	 * Gallery title.
+	 *
+	 * @since {{VERSION}}
+	 */
+	$title = apply_filters( 'impactrestoration_gallery_title', false );
+
+	ob_start();
+	?>
+
+	<?php if ( $title ) : ?>
+		<div class="gallery-title">
+			<span><?php echo $title; ?></span>
+		</div>
+	<?php endif; ?>
+
+	<div class="gallery-navigation"></div>
+
+	<div class="gallery-preview">
+		<button class="close" aria-label="Close">
+			<span class="fa fa-times"></span>
+		</button>
+
+		<div class="gallery-preview-navigation">
+			<button class="previous" aria-label="Previous">
+				<span class="fa fa-chevron-left"></span>
+			</button>
+
+			<button class="next" aria-label="Next">
+				<span class="fa fa-chevron-right"></span>
+			</button>
+		</div>
+	</div>
+
+	<?php
+	$html = ob_get_clean();
+
+	return $output . $html;
 }

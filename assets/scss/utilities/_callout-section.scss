@@ -1,0 +1,81 @@
+/*
+Callout section.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+@import "../utilities/triangle";
+
+@mixin callout-section-structure($orientation: "left", $heights: (500px, 50%, 50vh)) {
+  margin-bottom: map-get($grid-column-gutter, "medium");
+
+  .container {
+    @include breakpoint(medium) {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .callout-content {
+    position: relative;
+    padding: map-get($grid-column-gutter, 'small');
+    margin-bottom: map-get($grid-column-gutter, 'small');
+
+    @include breakpoint(medium) {
+      padding: 0 (map-get($grid-column-gutter, 'small') * 2);
+      margin-bottom: 0;
+
+      @each $height in $heights {
+        height: #{$height};
+      }
+    }
+
+    @include triangle(lower-#{$orientation}, $heights, (200px, 20%, 20vw));
+
+    &:before {
+      position: absolute;
+      top: 0;
+      #{$orientation}: 100%;
+    }
+
+    h2 {
+      border-bottom: 5px solid;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  .callout-prompt {
+    padding: map-get($grid-column-gutter, 'small');
+
+    @include breakpoint(medium) {
+      padding: 0 (map-get($grid-column-gutter, 'small') * 2);
+      padding-#{$orientation}: 200px;
+      padding-#{$orientation}: 20%;
+      padding-#{$orientation}: 20vw;
+
+      @each $height in $heights {
+        height: #{$height};
+      }
+    }
+  }
+}
+
+@mixin callout-section-style($color: $black) {
+  .callout-content {
+    color: foreground($color, $black, $white);
+    background: $color;
+
+    &:before {
+      color: $color;
+    }
+
+    h2 {
+      color: inherit;
+    }
+  }
+}

@@ -60,8 +60,20 @@ abstract class ImpactRestoration_AdminPage {
 	 */
 	function admin_menu() {
 
+		$page_args = wp_parse_args( $this->admin_page, array(
+			'page_title' => '',
+			'menu_title' => '',
+			'capability' => '',
+			'menu_slug'  => '',
+			'function'   => array( $this, 'admin_page' ),
+		) );
+
 		$page = add_theme_page(
-			$this->admin_page + array( $this, 'admin_page' )
+			$page_args['page_title'],
+			$page_args['menu_title'],
+			$page_args['capability'],
+			$page_args['menu_slug'],
+			$page_args['function']
 		);
 
 		if ( $page ) {
@@ -77,7 +89,8 @@ abstract class ImpactRestoration_AdminPage {
 	 * @since {{VERSION}}
 	 * @access private
 	 */
-	function admin_load() {}
+	function admin_load() {
+	}
 
 	/**
 	 * Load admin settings page.
@@ -85,7 +98,8 @@ abstract class ImpactRestoration_AdminPage {
 	 * @since {{VERSION}}
 	 * @access private
 	 */
-	function admin_page() {}
+	function admin_page() {
+	}
 
 	/**
 	 * Saves theme settings.

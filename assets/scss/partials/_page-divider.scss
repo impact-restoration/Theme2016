@@ -1,0 +1,36 @@
+/*
+Page divider.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+
+.page-divider {
+  position: relative;
+  text-align: center;
+  margin-top: map-get($grid-column-gutter, "medium");
+  margin-bottom: map-get($grid-column-gutter, "medium");
+
+  //&:before, &:after {
+  //  content: '';
+  //  display: table;
+  //  clear: both;
+  //}
+
+  hr {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    border-bottom: 6px solid #E6E6E6;
+    margin: -3px 0 0 0;
+  }
+
+  .page-divider-icon {
+    position: relative;
+    display: inline-block;
+    background: $white;
+    padding: 0 3em;
+    //transform: translateY(50%);
+  }
+}

@@ -1,0 +1,81 @@
+/*
+Triangle edge.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+
+$triangle-orientations: ("upper-left", "upper-right", "lower-left", "lower-right");
+
+@mixin triangle($orientation, $heights, $widths) {
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+
+    @if $orientation == "upper-left" {
+      border-width: 0;
+
+      @each $height in $heights {
+        border-top-width: #{$height};
+      }
+
+      @each $width in $widths {
+        border-right-width: #{$width};
+      }
+
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+
+    @if $orientation == "upper-right" {
+      border-width: 0;
+
+      @each $height in $heights {
+        border-bottom-width: #{$height};
+      }
+
+      @each $width in $widths {
+        border-right-width: #{$width};
+      }
+
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+
+    @if $orientation == "lower-left" {
+      border-width: 0;
+
+      @each $height in $heights {
+        border-top-width: #{$height};
+      }
+
+      @each $width in $widths {
+        border-left-width: #{$width};
+      }
+
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+    }
+
+    @if $orientation == "lower-right" {
+      border-width: 0;
+
+      @each $height in $heights {
+        border-bottom-width: #{$height};
+      }
+
+      @each $width in $widths {
+        border-left-width: #{$width};
+      }
+
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-left-color: transparent;
+    }
+  }
+}

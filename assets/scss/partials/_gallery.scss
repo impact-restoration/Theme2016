@@ -1,0 +1,233 @@
+/*
+Galleries.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+
+.gallery {
+  position: relative;
+  margin-bottom: 6em;
+
+  @include breakpoint(medium) {
+    height: 150px;
+    margin-bottom: map-get($grid-column-gutter, "medium");
+  }
+
+  &:hover {
+    .gallery-title {
+      transform: translateX(0);
+      background: rgba($black, 0.7);
+
+      &:before {
+        @include breakpoint(medium) {
+          color: rgba($black, 0.7);
+        }
+      }
+    }
+
+    .slick-arrow {
+      background: rgba($black, 0.8);
+    }
+  }
+
+  .gallery-title {
+    position: relative;
+    color: $white;
+    background: $black;
+    width: 70%;
+    height: 80px;
+    padding: 1em;
+    margin-bottom: map-get($grid-column-gutter, "medium");
+
+    @include breakpoint(small only) {
+      @include triangle(lower-left, 80px, 40px);
+    }
+
+    @include breakpoint(medium) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: auto;
+      padding: 0 1em;
+      margin-bottom: 0;
+      pointer-events: none;
+      z-index: 10;
+      transform: translateX(-100%);
+      transition: transform 300ms, background 300ms;
+
+      @include triangle(lower-left, 150px, 75px);
+    }
+
+    &:before {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      color: $black;
+      transition: color 300ms;
+    }
+
+    //&:before {
+    //  content: '';
+    //  position: absolute;
+    //  top: 0;
+    //  left: 100%;
+    //  width: 0;
+    //  height: 0;
+    //  border-style: solid;
+    //  border-width: 150px 100px 0 0;
+    //  border-color: rgba($black, 0.7) transparent transparent transparent;
+    //}
+
+    span {
+      display: block;
+      text-transform: uppercase;
+      font-size: 1.5em;
+      font-weight: bold;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .gallery-item {
+    float: left;
+    margin-bottom: 0;
+
+    a {
+      display: block;
+    }
+
+    .gallery-icon {
+      position: relative;
+      margin-bottom: 0;
+
+      &:hover {
+        &:after {
+          background: transparent;
+        }
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba($black, 0.5);
+        cursor: pointer;
+        transition: background 300ms;
+      }
+    }
+  }
+
+  .gallery-navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5em;
+    width: 100%;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      width: auto;
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .slick-arrow {
+      background: $black;
+      color: $white;
+      outline: none;
+      font-size: 1.5em;
+      padding: 0.5em;
+      margin: 0 0.5em;
+
+      @include breakpoint(medium) {
+        opacity: 0.8;
+        transition: opacity 300ms;
+        font-size: 1em;
+        height: map-get($grid-column-gutter, "medium");
+        line-height: map-get($grid-column-gutter, "medium");
+        padding: 0;
+        margin: 0;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      .fa {
+        padding: 0 0.5em;
+      }
+    }
+  }
+
+  .gallery-preview {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba($black, 0.9);
+    z-index: 100;
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: $white;
+      font-size: 2em;
+      margin: 0.5em;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    img {
+      position: relative;
+      display: block;
+      width: auto;
+      max-height: 80%;
+      max-width: 100%;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .gallery-preview-navigation {
+      position: fixed;
+      bottom: 1em;
+      width: 100%;
+      text-align: center;
+
+      button {
+        display: inline-block;
+        color: $white;
+        font-size: 2em;
+        margin: 0 0.5em;
+
+        &.disabled {
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+}
+
+body.admin-bar {
+  .gallery {
+    .gallery-preview {
+      .close {
+        @include breakpoint(medium) {
+          top: 32px;
+        }
+      }
+    }
+  }
+}

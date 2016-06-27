@@ -4,3 +4,72 @@ The static site footer.
 @since {{VERSION}}
 */
 @import "../settings";
+
+#site-footer {
+  background-color: $black;
+  color: $white;
+  padding: (map-get($grid-column-gutter, "medium") * 2) 0;
+
+  .logo {
+    max-width: 400px;
+  }
+
+  .phone {
+    font-size: 2em;
+    font-weight: bold;
+
+    a {
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer-services {
+    list-style: none;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+  }
+
+  .menu {
+    list-style: none;
+    margin: 0;
+
+    li {
+      display: block;
+      margin-bottom: $paragraph-margin-bottom;
+
+      a {
+        padding: 0;
+        color: $white;
+      }
+    }
+  }
+
+  .copyright {
+    margin-bottom: 0;
+    margin-top: 1em;
+  }
+
+  .credit {
+    margin-bottom: 0;
+
+    @include breakpoint(medium) {
+      float: right;
+    }
+
+    a {
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

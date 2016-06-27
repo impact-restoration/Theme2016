@@ -1,0 +1,127 @@
+/*
+Single Service CPT.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+
+body.single-service {
+  .service-header {
+    background-color: $black;
+    color: $white;
+    margin-bottom: map-get($grid-column-gutter, "medium");
+
+    .service-header-color {
+      height: 100px;
+      height: 10%;
+      height: 10vh;
+
+      @include breakpoint(medium) {
+        height: 500px;
+        height: 80%;
+        height: 80vh;
+      }
+
+      @include breakpoint(medium) {
+        @include triangle(upper-left, (500px 80% 80vh), (200px 20% 20vw));
+      }
+
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: $black;
+      }
+    }
+
+    .service-header-content {
+      padding-top: map-get($grid-column-gutter, "small");
+      padding-bottom: map-get($grid-column-gutter, "small");
+
+      @include breakpoint(medium) {
+        height: 500px;
+        height: 80%;
+        height: 80vh;
+      }
+
+      h1 {
+        color: $white;
+      }
+
+      hr {
+        border-bottom: 5px solid;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      .service-content {
+        color: $white;
+      }
+
+      .container {
+        @include breakpoint(medium) {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  .service-services-list {
+    margin-top: map-get($grid-column-gutter, "medium");
+    margin-bottom: map-get($grid-column-gutter, "medium");
+  }
+
+  .service-jobs-title {
+    .callout-content {
+      @include breakpoint(medium) {
+
+      }
+
+      &:before {
+        border-top-width: 200px;
+        border-top-width: 20vh;
+        border-left-width: 100px;
+        border-left-width: 10vw;
+      }
+    }
+
+    .callout-prompt {
+      height: 200px;
+      height: 20vh;
+    }
+
+    h2 {
+      border-bottom: none !important;
+    }
+
+    .service-jobs-title-text {
+      @include breakpoint(medium only) {
+        display: block;
+      }
+    }
+
+    .callout-prompt {
+      font-size: 1em;
+      text-align: center;
+
+      @include breakpoint(medium) {
+        font-size: 1.2em;
+        text-align: left;
+      }
+
+      @include breakpoint(large) {
+        font-size: 1.5em;
+      }
+
+      .button {
+        font-size: inherit;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
