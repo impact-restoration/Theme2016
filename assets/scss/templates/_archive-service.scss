@@ -14,7 +14,9 @@ body.post-type-archive-service {
   .archive-service-item {
     &.left {
       .archive-service-item-content {
-        @include triangle(upper-left, (350px, 60%, 60vh), (100px, 20%, 20vh));
+        @include breakpoint(medium) {
+          @include triangle(upper-left, (350px, 60%, 60vh), (100px, 20%, 20vh));
+        }
 
         &:before {
           left: 100%;
@@ -24,7 +26,9 @@ body.post-type-archive-service {
 
     &.right {
       .archive-service-item-content {
-        @include triangle(upper-right, (350px, 60%, 60vh), (100px, 20%, 20vh));
+        @include breakpoint(medium) {
+          @include triangle(upper-right, (350px, 60%, 60vh), (100px, 20%, 20vh));
+        }
 
         &:before {
           right: 100%;

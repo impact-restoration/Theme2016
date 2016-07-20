@@ -40,7 +40,9 @@ Callout section.
       }
     }
 
-    @include triangle(lower-#{$orientation}, $heights, (200px, 20%, 20vw));
+    @include breakpoint(medium) {
+      @include triangle(lower-#{$orientation}, $heights, (200px, 20%, 20vw));
+    }
 
     &:before {
       position: absolute;

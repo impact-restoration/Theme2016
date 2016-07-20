@@ -85,7 +85,9 @@ body.home {
       height: 100%;
       background-color: $black;
 
-      @include triangle("upper-left", 315px, (200px, 200%, 20vw));
+      @include breakpoint(medium) {
+        @include triangle("upper-left", 315px, (200px, 200%, 20vw));
+      }
 
       &:before {
         position: absolute;
