@@ -32,7 +32,7 @@ if ( $services_list = rbm_get_field( 'services' ) ) {
 
 $service_jobs = rbm_get_field( 'jobs' );
 ?>
-	<section class="service-header red up-left row expand">
+	<section class="service-header red up-left row expanded">
 		<div class="service-header-color columns small-12 medium-4 medium-push-8 large-6 large-push-6"
 		     style="background-color: <?php echo $color; ?>;"></div>
 
@@ -74,7 +74,7 @@ $service_jobs = rbm_get_field( 'jobs' );
 <?php impactrestoration_load_template( 'partials/divider' ); ?>
 
 <?php if ( $service_jobs ) : ?>
-	<section class="service-jobs-title callout-section left black row expand">
+	<section class="service-jobs-title callout-section left black row expanded">
 		<div class="callout-content columns small-12 medium-4 large-3">
 			<div class="container">
 				<h2>Jobs</h2>

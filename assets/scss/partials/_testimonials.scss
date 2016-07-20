@@ -1,0 +1,16 @@
+/*
+Testimonials.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+
+.testimonial {
+  .testimonial-title {
+    font-size: 1.2em;
+  }
+
+  .testimonial-quote-icon {
+    color: $dark-gray;
+  }
+}

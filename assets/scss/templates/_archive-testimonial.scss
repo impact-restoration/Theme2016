@@ -1,0 +1,12 @@
+/*
+Archive Testimonial CPT.
+
+@since {{VERSION}}
+*/
+@import "../settings";
+
+body.post-type-archive-testimonial {
+  .testimonial {
+    margin-bottom: map-get($grid-column-gutter, 'medium');
+  }
+}

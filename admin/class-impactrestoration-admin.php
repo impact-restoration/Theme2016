@@ -63,9 +63,11 @@ class ImpactRestoration_Admin {
 		require_once __DIR__ . '/pages/class-impactrestoration-adminpage-settings.php';
 		require_once __DIR__ . '/extra-meta/class-impactrestoration-adminextrameta-home.php';
 		require_once __DIR__ . '/customizer/class-impactrestoration-admincustomizer-footer.php';
+		require_once __DIR__ . '/customizer/class-impactrestoration-admincustomizer-site-identity.php';
 
 //		$this->pages['settings']    = new ImpactRestoration_AdminPage_Settings();
 		$this->metaboxes['home']    = new ImpactRestoration_AdminExtraMeta_Home();
 		$this->customizer['footer'] = new ImpactRestoration_AdminCustomizer_Footer();
+		$this->customizer['footer'] = new ImpactRestoration_AdminCustomizer_SiteIdentity();
 	}
 }

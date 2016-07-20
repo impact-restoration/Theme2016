@@ -25,7 +25,7 @@ get_header();
 						</h1>
 
 						<div class="post-content">
-							<?php the_content(); ?>
+							<?php the_excerpt(); ?>
 						</div>
 
 						<a href="<?php the_permalink(); ?>" class="read-more-link dark button">

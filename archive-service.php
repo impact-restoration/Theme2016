@@ -20,7 +20,7 @@ get_header();
 		$i ++;
 		$color = rbm_get_field( 'service_color', false, array( 'sanitization' => 'esc_attr' ) );
 		?>
-		<section class="archive-service-item row expand <?php echo $i % 2 === 1 ? 'left' : 'right'; ?>"
+		<section class="archive-service-item row expanded <?php echo $i % 2 === 1 ? 'left' : 'right'; ?>"
 		         style="color: <?php echo $color; ?>;">
 			<div class="archive-service-item-color columns small-12 medium-4 large-6
 			<?php echo $i % 2 === 1 ? 'medium-push-8 large-push-6' : ''; ?>"

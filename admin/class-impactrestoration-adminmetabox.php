@@ -53,9 +53,9 @@ abstract class ImpactRestoration_AdminExtraMeta {
 			) );
 
 			$add_metabox = false;
-			if ( isset( $meta_box['condition_callback'] ) && is_callable( $meta_box['condition_callback'] ) ) {
+			if ( isset( $meta_box['condition_callback'] ) && is_callable( array( $this, $meta_box['condition_callback'] ) ) ){
 
-				if ( call_user_func( $meta_box['condition_callback'] ) ) {
+				if ( call_user_func( array( $this, $meta_box['condition_callback'] ) ) ) {
 					$add_metabox = true;
 				}
 

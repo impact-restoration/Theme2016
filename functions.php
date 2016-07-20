@@ -54,6 +54,9 @@ add_filter( 'excerpt_length', 'impactrestoration_custom_excerpt_length', 999 );
 add_filter( 'use_default_gallery_style', '__return_false' );
 add_filter( 'shortcode_atts_gallery', 'impactrestoration_gallery_atts' );
 add_filter( 'gallery_style', 'impactrestoration_gallery_html' );
+add_action( 'admin_bar_menu', 'impactrestoration_modify_toolbar_logo', 15 );
+add_action( 'wp_head', 'impactrestoration_toolbar_css' );
+add_action( 'admin_head', 'impactrestoration_toolbar_css' );
 
 /**
  * Setup theme properties and stuff.
@@ -354,4 +357,51 @@ function impactrestoration_gallery_html( $output ) {
 	$html = ob_get_clean();
 
 	return $output . $html;
+}
+
+/**
+ * Modifies the adminbar logo.
+ *
+ * @since {{VERSION}}
+ * @access private
+ *
+ * @param WP_Admin_Bar $admin_bar
+ */
+function impactrestoration_modify_toolbar_logo( $admin_bar ) {
+
+	$admin_bar->remove_menu( 'wp-logo' );
+	$admin_bar->add_node( array(
+		'id'    => 'impactrestoration-icon',
+		'title' => '',
+		'href'  => get_bloginfo( 'url' ),
+		'meta'  => array(
+			'class' => 'impactrestoration-adminbar-icon',
+		),
+	) );
+}
+
+/**
+ * Outputs CSS in the <head> for the toolbar.
+ *
+ * @since {{VERSION}}
+ * @access private
+ */
+function impactrestoration_toolbar_css() {
+
+	if ( $toolbar_icon = get_theme_mod( 'toolbar_icon' ) ) : ?>
+		<style>
+			#wpadminbar ul li.impactrestoration-adminbar-icon a.ab-item {
+				background: url("<?php echo $toolbar_icon; ?>") no-repeat;
+				background-size: 24px;
+				background-position: 7px 3px;
+				width: 24px;
+			}
+
+			#wpadminbar ul li.impactrestoration-adminbar-icon:hover a.ab-item {
+				background: url("<?php echo $toolbar_icon; ?>") #32373c no-repeat !important;
+				background-size: 24px !important;
+				background-position: 7px 3px !important;
+			}
+		</style>
+	<?php endif;
 }

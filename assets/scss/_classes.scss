@@ -6,9 +6,8 @@ Adds extra utility classes.
 
 @import "settings";
 
-.row.expand {
-  width: 100%;
-  max-width: none;
+.row.small {
+  max-width: 600px;
 }
 
 .screen-reader-text {

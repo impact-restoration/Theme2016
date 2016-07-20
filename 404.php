@@ -14,7 +14,7 @@ get_header();
 
 $getintouch_form = rbm_get_field( 'getintouchform', get_option( 'page_on_front' ) );
 ?>
-	<section class="callout-section black left row expand">
+	<section class="callout-section black left row expanded">
 		<div class="callout-content columns small-12 medium-6 large-5">
 			<div class="container">
 				<h2 class="callout-content-title">404 - Not Found</h2>

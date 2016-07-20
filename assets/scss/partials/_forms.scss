@@ -9,3 +9,18 @@ Form edits (mostly to account for GForms).
   list-style: none;
   margin: 0;
 }
+
+label.gfield_label {
+  font-weight: bold;
+}
+
+.name_first, .name_last {
+  input[type="text"] {
+    margin-bottom: 0;
+  }
+
+  label {
+    margin-bottom: $paragraph-margin-bottom;
+    font-style: italic;
+  }
+}

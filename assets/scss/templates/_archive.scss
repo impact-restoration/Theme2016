@@ -6,10 +6,6 @@ Archive.
 @import "../settings";
 
 body.archive {
-  #site-content {
-    margin-top: map-get($grid-column-gutter, "medium");
-  }
-
   article {
     &:not(:last-of-type) {
       margin-bottom: map-get($grid-column-gutter, "medium");

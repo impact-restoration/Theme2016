@@ -41,7 +41,7 @@ class ImpactRestoration_AdminExtraMeta_Home extends ImpactRestoration_AdminExtra
 			),
 		),
 		array(
-			'conditional_callback' => 'mb_home_condition',
+			'condition_callback' => 'mb_home_condition',
 			'args'                 => array(
 				'id'       => 'impactrestoration-mb-home-getintouchform',
 				'title'    => 'Get In Touch Form',

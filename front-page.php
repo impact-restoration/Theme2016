@@ -25,18 +25,24 @@ $about_sections = rbm_get_field( 'home_sections' );
 
 $getintouch_form = rbm_get_field( 'getintouchform' );
 
+$testimonials = get_posts( array(
+	'post_type'   => 'testimonial',
+	'numberposts' => 4,
+) );
+
 get_header();
 ?>
 
 <?php if ( $services ) : ?>
-	<section class="home-services row expand"
+	<section class="home-services row expanded"
 	         style="background-color: <?php echo rbm_get_field( 'service_color', $services[0]->ID, 'esc_attr' ); ?>">
 		<div class="service-selector columns small-12 medium-8 medium-push-4">
 			<div class="selector">
 				<div class="selector-options">
 					<?php foreach ( $services as $post ) : ?>
 						<?php setup_postdata( $post ); ?>
-						<a href="#service-<?php the_ID(); ?>" class="<?php echo $post->ID === $services[0]->ID ? 'active' : ''; ?>">
+						<a href="#service-<?php the_ID(); ?>"
+						   class="<?php echo $post->ID === $services[0]->ID ? 'active' : ''; ?>">
 							<?php the_post_thumbnail(); ?>
 						</a>
 
@@ -54,7 +60,8 @@ get_header();
 			<?php foreach ( $services as $post ) : ?>
 				<?php setup_postdata( $post ); ?>
 				<?php $color = rbm_get_field( 'service_color', false, array( 'sanitization' => 'esc_attr' ) ); ?>
-				<div id="service-<?php the_ID(); ?>" class="service <?php echo $post->ID === $services[0]->ID ? 'active' : ''; ?>"
+				<div id="service-<?php the_ID(); ?>"
+				     class="service <?php echo $post->ID === $services[0]->ID ? 'active' : ''; ?>"
 				     data-color="<?php echo $color; ?>" style="color: <?php echo $color; ?>;">
 					<h1 class="service-title">
 						<?php if ( $icon = rbm_get_field( 'service-icon' ) ) : ?>
@@ -85,7 +92,7 @@ get_header();
 	<div class="clearfix"></div>
 <?php endif; ?>
 
-	<section class="home-phone callout-section primary right row expand">
+	<section class="home-phone callout-section primary right row expanded">
 		<div class="callout-content columns small-12 medium-6 medium-push-6 large-5 large-push-7">
 			<div class="container">
 				<h2 class="callout-content-title">Give us a call today!</h2>
@@ -93,7 +100,7 @@ get_header();
 				<div class="callout-content-text">
 					<span class="fa fa-quote-left"></span>
 					<p>
-						The Service You Expect, The Solutions You Need, The Results You Deserve
+						Because Service is Everything and Relationships Matter
 					</p>
 				</div>
 			</div>
@@ -133,7 +140,7 @@ get_header();
 <?php if ( $about_sections ) : ?>
 	<?php foreach ( $about_sections as $i => $about_section ) : ?>
 		<?php $image = wp_get_attachment_image_src( $about_section['image'], 'full' ); ?>
-		<section class="home-about-section row expand <?php echo $i % 2 === 0 ? 'left primary' : 'right secondary'; ?>">
+		<section class="home-about-section row expanded <?php echo $i % 2 === 0 ? 'left primary' : 'right secondary'; ?>">
 			<div class="home-about-section-image columns small-12 medium-6 large-7
 			<?php echo $i % 2 === 0 ? 'medium-push-6 large-push-5' : ''; ?>"
 			     style="background-image: url('<?php echo $image ? $image[0] : ''; ?>');">
@@ -156,7 +163,7 @@ get_header();
 <?php impactrestoration_load_template( 'partials/divider' ); ?>
 
 <?php if ( $getintouch_form && function_exists( 'gravity_form' ) ) : ?>
-	<section class="home-getintouch callout-section secondary left row expand">
+	<section class="home-getintouch callout-section secondary left row expanded">
 		<div class="callout-content columns small-12 medium-6 large-5">
 			<div class="container">
 				<h2 class="callout-content-title">Get in touch with us</h2>
@@ -164,7 +171,7 @@ get_header();
 				<div class="callout-content-text">
 					<span class="fa fa-quote-left"></span>
 					<p>
-						Because Service is Everything and Relationships Matter
+						The Service You Expect, The Solutions You Need, The Results You Deserve
 					</p>
 				</div>
 			</div>
@@ -174,6 +181,36 @@ get_header();
 			<div class="container">
 				<?php gravity_form( $getintouch_form, false, false ); ?>
 			</div>
+		</div>
+	</section>
+
+	<div class="clearfix"></div>
+<?php endif; ?>
+
+<?php if ( $testimonials ) : ?>
+	<section class="home-testimonials row expanded small-up-1 medium-up-2 large-up-4">
+		<?php foreach ( $testimonials as $post ) : ?>
+			<?php setup_postdata( $post ); ?>
+			<div class="testimonial column">
+				<h2 class="testimonial-title">
+					<?php the_title(); ?>
+				</h2>
+
+				<div class="testimonial-content">
+					<p>
+						<span class="testimonial-quote-icon fa fa-quote-left"></span>
+						<?php echo get_the_excerpt(); ?>
+					</p>
+				</div>
+			</div>
+		<?php endforeach; ?>
+		<?php wp_reset_postdata(); ?>
+
+		<div class="columns">
+			<a href="<?php echo get_post_type_archive_link( 'testimonial' ); ?>" class="button dark">
+				See More
+				<span class="fa fa-angle-double-right"></span>
+			</a>
 		</div>
 	</section>
 

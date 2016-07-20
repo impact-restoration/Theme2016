@@ -14,7 +14,7 @@ get_header();
 
 the_post();
 ?>
-	<header class="post-header callout-section black left row expand">
+	<header class="post-header callout-section black left row expanded">
 		<div class="callout-content columns small-12 medium-6 large-5">
 			<div class="container">
 				<h2 class="callout-content-title no-underline"><?php the_title(); ?></h2>
