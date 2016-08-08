@@ -36,6 +36,7 @@ get_header();
 				<div id="testimonial-<?php the_ID(); ?>" <?php post_class( array( 'column' ) ); ?>>
 					<h1 class="testimonial-title">
 						<?php the_title(); ?>
+						<?php edit_post_link( '<span class="button small">&nbsp;<span class="fa fa-pencil"></span> Edit</span>' ); ?>
 					</h1>
 
 					<div class="testimonial-content">
