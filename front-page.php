@@ -21,6 +21,9 @@ if ( $services_list = rbm_get_field( 'services' ) ) {
 	$services_list = explode( "\n", $services_list );
 }
 
+$phone_blurb        = rbm_get_field( 'phone_blurb' );
+$get_in_touch_blurb = rbm_get_field( 'get_in_touch_blurb' );
+
 $about_sections = rbm_get_field( 'home_sections' );
 
 $getintouch_form = rbm_get_field( 'getintouchform' );
@@ -100,7 +103,7 @@ get_header();
 				<div class="callout-content-text">
 					<span class="fa fa-quote-left"></span>
 					<p>
-						Because Service is Everything and Relationships Matter
+						<?php echo esc_attr( $phone_blurb ); ?>
 					</p>
 				</div>
 			</div>
@@ -140,7 +143,8 @@ get_header();
 <?php if ( $about_sections ) : ?>
 	<?php foreach ( $about_sections as $i => $about_section ) : ?>
 		<?php $image = wp_get_attachment_image_src( $about_section['image'], 'full' ); ?>
-		<section class="home-about-section row expanded <?php echo $i % 2 === 0 ? 'left primary' : 'right secondary'; ?>">
+		<section
+			class="home-about-section row expanded <?php echo $i % 2 === 0 ? 'left primary' : 'right secondary'; ?>">
 			<div class="home-about-section-image columns small-12 medium-6 large-7
 			<?php echo $i % 2 === 0 ? 'medium-push-6 large-push-5' : ''; ?>"
 			     style="background-image: url('<?php echo $image ? $image[0] : ''; ?>');">
@@ -171,7 +175,7 @@ get_header();
 				<div class="callout-content-text">
 					<span class="fa fa-quote-left"></span>
 					<p>
-						The Service You Expect, The Solutions You Need, The Results You Deserve
+						<?php echo esc_attr( $get_in_touch_blurb ); ?>
 					</p>
 				</div>
 			</div>
