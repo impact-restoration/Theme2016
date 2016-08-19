@@ -15,6 +15,9 @@ $services = get_posts( array(
 	'numberposts' => 4,
 ) );
 
+$about_header = rbm_get_field( 'about_header' );
+$about_content = rbm_get_field( 'about_content' );
+
 $phone = get_option( 'impactrestoration_phone', '​(317) 268-6375' );
 
 if ( $services_list = rbm_get_field( 'services' ) ) {
@@ -94,6 +97,23 @@ get_header();
 
 	<div class="clearfix"></div>
 <?php endif; ?>
+
+	<section class="home-about row expanded">
+		<div class="columns small-12 medium-6">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_alt.png" width="608" height="266"
+			     alt="impact restoration" title="Impact Restoration" />
+		</div>
+
+		<div class="columns small-12 medium-6">
+			<h1>
+				<?php echo $about_header; ?>
+			</h1>
+
+			<p>
+				<?php echo $about_content; ?>
+			</p>
+		</div>
+	</section>
 
 	<section class="home-phone callout-section primary right row expanded">
 		<div class="callout-content columns small-12 medium-6 medium-push-6 large-5 large-push-7">

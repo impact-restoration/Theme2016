@@ -149,6 +149,15 @@ body.home {
     }
   }
 
+  .home-about {
+    margin-top: map_get($grid-column-gutter, 'medium') * 4;
+    margin-bottom: map_get($grid-column-gutter, 'medium') * 4;
+
+    h1 {
+      border-bottom: 5px solid $black;
+    }
+  }
+
   .home-phone {
     .callout-prompt {
       font-size: 2em;

@@ -83,6 +83,8 @@ class ImpactRestoration_AdminExtraMeta_Home extends ImpactRestoration_AdminExtra
 	 */
 	function mb_blurbs() {
 
+		rbm_do_field_text( 'about_header', 'About Header' );
+		rbm_do_field_textarea( 'about_content', 'About Content' );
 		rbm_do_field_text( 'phone_blurb', 'Phone Blurb' );
 		rbm_do_field_text( 'get_in_touch_blurb', 'Get In Touch Blurb' );
 	}
