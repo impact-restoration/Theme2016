@@ -105,9 +105,9 @@ get_header();
 		</div>
 
 		<div class="columns small-12 medium-6">
-			<h1>
+			<h2>
 				<?php echo $about_header; ?>
-			</h1>
+			</h2>
 
 			<p>
 				<?php echo $about_content; ?>
