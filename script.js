@@ -2899,7 +2899,7 @@ s=a.eq(Math.min(e+1,a.length-1)).find("a").first(),t(this).children("[data-subme
 /*
  WP Gallery to Slick.
 
- @since {{VERSION}}
+ @since 1.0.0
  */
 (function ($) {
     'use strict';
@@ -3004,7 +3004,7 @@ s=a.eq(Math.min(e+1,a.length-1)).find("a").first(),t(this).children("[data-subme
 /*
  Base
 
- @since {{VERSION}}
+ @since 1.0.0
  */
 (function ($) {
     'use strict';
@@ -3014,7 +3014,7 @@ s=a.eq(Math.min(e+1,a.length-1)).find("a").first(),t(this).children("[data-subme
 /*
  Functionality for the home page service selector.
 
- @since {{VERSION}}
+ @since 1.0.0
  */
 (function ($) {
     'use strict';
@@ -3090,7 +3090,7 @@ s=a.eq(Math.min(e+1,a.length-1)).find("a").first(),t(this).children("[data-subme
 /*
  Functionality for the home page service selector.
 
- @since {{VERSION}}
+ @since 1.0.0
  */
 (function ($) {
     'use strict';

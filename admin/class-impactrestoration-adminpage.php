@@ -2,7 +2,7 @@
 /**
  * Theme settings page
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  * @subpackage ImpactRestoration/admin
@@ -16,7 +16,7 @@ abstract class ImpactRestoration_AdminPage {
 	/**
 	 * Admin page ID.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var string
 	 */
@@ -25,7 +25,7 @@ abstract class ImpactRestoration_AdminPage {
 	/**
 	 * Admin page init settings.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var array
 	 */
@@ -34,7 +34,7 @@ abstract class ImpactRestoration_AdminPage {
 	/**
 	 * Admin page settings.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var array
 	 */
@@ -43,7 +43,7 @@ abstract class ImpactRestoration_AdminPage {
 	/**
 	 * ImpactRestoration_Admin constructor.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 */
 	function __construct() {
 
@@ -55,7 +55,7 @@ abstract class ImpactRestoration_AdminPage {
 	/**
 	 * Add menu items.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 * @access private
 	 */
 	function admin_menu() {
@@ -86,7 +86,7 @@ abstract class ImpactRestoration_AdminPage {
 	/**
 	 * Pre-requisites for the page.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 * @access private
 	 */
 	function admin_load() {
@@ -95,7 +95,7 @@ abstract class ImpactRestoration_AdminPage {
 	/**
 	 * Load admin settings page.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 * @access private
 	 */
 	function admin_page() {
@@ -104,7 +104,7 @@ abstract class ImpactRestoration_AdminPage {
 	/**
 	 * Saves theme settings.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 * @access private
 	 */
 	function admin_save() {

@@ -2,7 +2,7 @@
 /**
  * Sidebar.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  */
@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || die();
 			/**
 			 * Allows hooking before the sidebar widgets to add custom widgets.
 			 *
-			 * @since {{VERSION}}
+			 * @since 1.0.0
 			 */
 			do_action( 'impactrestoration_sidebar_before_widgets' );
 
@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || die();
 			/**
 			 * Allows hooking after the sidebar widgets to add custom widgets.
 			 *
-			 * @since {{VERSION}}
+			 * @since 1.0.0
 			 */
 			do_action( 'impactrestoration_sidebar_after_widgets' );
 			?>

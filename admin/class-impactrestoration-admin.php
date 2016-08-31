@@ -2,7 +2,7 @@
 /**
  * The theme's admin class for providing admin-related functionality.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  * @subpackage ImpactRestoration/admin
@@ -16,7 +16,7 @@ class ImpactRestoration_Admin {
 	/**
 	 * Admin pages.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var array
 	 */
@@ -25,7 +25,7 @@ class ImpactRestoration_Admin {
 	/**
 	 * Admin meta boxes.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var array
 	 */
@@ -34,7 +34,7 @@ class ImpactRestoration_Admin {
 	/**
 	 * Admin Customizer options.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var array
 	 */
@@ -43,7 +43,7 @@ class ImpactRestoration_Admin {
 	/**
 	 * ImpactRestoration_Admin constructor.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 */
 	function __construct() {
 
@@ -53,7 +53,7 @@ class ImpactRestoration_Admin {
 	/**
 	 * Require deps.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 */
 	private function require_files () {
 

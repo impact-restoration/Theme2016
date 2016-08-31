@@ -1,7 +1,7 @@
 /*
  Functionality for the home page service selector.
 
- @since {{VERSION}}
+ @since 1.0.0
  */
 (function ($) {
     'use strict';

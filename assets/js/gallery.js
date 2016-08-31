@@ -1,7 +1,7 @@
 /*
  WP Gallery to Slick.
 
- @since {{VERSION}}
+ @since 1.0.0
  */
 (function ($) {
     'use strict';

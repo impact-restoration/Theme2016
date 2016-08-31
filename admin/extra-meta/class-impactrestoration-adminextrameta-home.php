@@ -2,7 +2,7 @@
 /**
  * Adds extra meta boxes.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  * @subpackage ImpactRestoration/admin
@@ -16,7 +16,7 @@ class ImpactRestoration_AdminExtraMeta_Home extends ImpactRestoration_AdminExtra
 	/**
 	 * Meta boxes to add.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var array
 	 */
@@ -65,7 +65,7 @@ class ImpactRestoration_AdminExtraMeta_Home extends ImpactRestoration_AdminExtra
 	/**
 	 * Conditional to show the home metabox or not.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 * @access private
 	 */
 	function mb_home_condition() {
@@ -78,7 +78,7 @@ class ImpactRestoration_AdminExtraMeta_Home extends ImpactRestoration_AdminExtra
 	/**
 	 * Metabox for blurbs.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 * @access private
 	 */
 	function mb_blurbs() {
@@ -92,7 +92,7 @@ class ImpactRestoration_AdminExtraMeta_Home extends ImpactRestoration_AdminExtra
 	/**
 	 * Metabox for sections.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 */
 	static public function mb_sections() {
 
@@ -115,7 +115,7 @@ class ImpactRestoration_AdminExtraMeta_Home extends ImpactRestoration_AdminExtra
 	/**
 	 * Metabox for the "Get In Touch" Gravity Form.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 */
 	static public function mb_getintouchform() {
 

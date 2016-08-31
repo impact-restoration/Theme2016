@@ -2,7 +2,7 @@
 /**
  * Adds extra meta boxes.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  * @subpackage ImpactRestoration/admin
@@ -16,7 +16,7 @@ abstract class ImpactRestoration_AdminExtraMeta {
 	/**
 	 * Meta boxes to add.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var array
 	 */
@@ -25,7 +25,7 @@ abstract class ImpactRestoration_AdminExtraMeta {
 	/**
 	 * ImpactRestoration_AdminExtraMeta constructor.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 */
 	function __construct() {
 
@@ -35,7 +35,7 @@ abstract class ImpactRestoration_AdminExtraMeta {
 	/**
 	 * Add menu items.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 * @access private
 	 */
 	function add_meta_boxes() {

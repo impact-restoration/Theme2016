@@ -2,7 +2,7 @@
 /**
  * Page section divider
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  */

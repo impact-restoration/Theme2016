@@ -2,7 +2,7 @@
 /**
  * The theme's functions file that loads on EVERY page, used for uniform functionality.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  */
@@ -20,7 +20,7 @@ if ( defined( 'THEME_VERSION' ) || defined( 'THEME_FONTS' ) ) {
 	wp_die( 'ERROR in Impact Restoration theme: There is a conflicting constant. Please either find the conflict or rename the constant.' );
 }
 
-define( 'THEME_VERSION', '{{VERSION}}' );
+define( 'THEME_VERSION', '1.0.0' );
 define( 'THEME_FONTS', serialize( array(
 	'font-awesome' => 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css',
 	'open-sans'    => 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,800',
@@ -61,7 +61,7 @@ add_action( 'admin_head', 'impactrestoration_toolbar_css' );
 /**
  * Setup theme properties and stuff.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 function impactrestoration_setup_theme() {
 
@@ -86,7 +86,7 @@ function impactrestoration_setup_theme() {
 /**
  * Adds support for custom image sizes.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @param $sizes array The existing image sizes.
  *
@@ -104,7 +104,7 @@ function impactrestoration_add_image_sizes( $sizes ) {
 /**
  * Register theme files.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 function impactrestoration_register_scripts() {
 
@@ -168,7 +168,7 @@ function impactrestoration_register_scripts() {
 /**
  * Enqueue theme files.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 function impactrestoration_load_scripts() {
 
@@ -190,7 +190,7 @@ function impactrestoration_load_scripts() {
 /**
  * Enqueue admin files.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 function impactrestoration_load_admin_scripts() {
 
@@ -201,7 +201,7 @@ function impactrestoration_load_admin_scripts() {
 /**
  * Register nav menus.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 function impactrestoration_load_nav_menus() {
 
@@ -212,7 +212,7 @@ function impactrestoration_load_nav_menus() {
 /**
  * Register sidebars.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  */
 function impactrestoration_load_sidebars() {
 
@@ -229,7 +229,7 @@ function impactrestoration_load_sidebars() {
 /**
  * Loads a template file.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @param string $template Template local path.
  */
@@ -243,7 +243,7 @@ function impactrestoration_load_template( $template ) {
 /**
  * Retreives a template file.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @param string $template Template local path.
  *
@@ -254,7 +254,7 @@ function impactrestoration_get_template( $template ) {
 	/**
 	 * Filter template to retrieve.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 */
 	$template = apply_filters( 'impactrestoration_get_template', $template );
 
@@ -264,7 +264,7 @@ function impactrestoration_get_template( $template ) {
 /**
  * All available icons for Impact Restoration.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @return array Icons with classname as key and name as value.
  */
@@ -292,7 +292,7 @@ function impactrestoration_custom_excerpt_length( $length ) {
 /**
  * Modify the gallery to have "unlimitted" columns.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  *
  * @param $atts
@@ -310,7 +310,7 @@ function impactrestoration_gallery_atts( $atts ) {
 /**
  * Append gallery extra HTML.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  *
  * @param $output
@@ -322,7 +322,7 @@ function impactrestoration_gallery_html( $output ) {
 	/**
 	 * Gallery title.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 */
 	$title = apply_filters( 'impactrestoration_gallery_title', false );
 
@@ -362,7 +362,7 @@ function impactrestoration_gallery_html( $output ) {
 /**
  * Modifies the adminbar logo.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  *
  * @param WP_Admin_Bar $admin_bar
@@ -383,7 +383,7 @@ function impactrestoration_modify_toolbar_logo( $admin_bar ) {
 /**
  * Outputs CSS in the <head> for the toolbar.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  * @access private
  */
 function impactrestoration_toolbar_css() {

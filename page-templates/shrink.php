@@ -4,7 +4,7 @@
  *
  * A page template with a smaller max-width
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  */

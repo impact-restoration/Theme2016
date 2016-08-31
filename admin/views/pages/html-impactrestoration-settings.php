@@ -2,7 +2,7 @@
 /**
  * Theme settings page.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @var array $tabs Page tabs.
  * @var string $current_tab The current tab of the page.

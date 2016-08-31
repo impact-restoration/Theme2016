@@ -2,7 +2,7 @@
 /**
  * The theme's footer file that appears on EVERY page.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  */

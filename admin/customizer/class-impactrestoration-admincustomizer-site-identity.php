@@ -2,7 +2,7 @@
 /**
  * Adds footer Customizer options
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  * @subpackage ImpactRestoration/admin

@@ -2,7 +2,7 @@
 /**
  * The theme's index file use for displaying the blog feed.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  */

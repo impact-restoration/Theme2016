@@ -2,7 +2,7 @@
 /**
  * Theme settings page
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  * @subpackage ImpactRestoration/admin/pages
@@ -28,7 +28,7 @@ class ImpactRestoration_AdminPage_Settings extends ImpactRestoration_AdminPage {
 	/**
 	 * Load admin settings page.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 * @access private
 	 */
 	function admin_page() {

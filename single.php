@@ -2,7 +2,7 @@
 /**
  * The theme's single file use for displaying posts.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  */

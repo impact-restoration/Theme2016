@@ -2,7 +2,7 @@
 /**
  * The theme's front-page file use for displaying the home page.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  */

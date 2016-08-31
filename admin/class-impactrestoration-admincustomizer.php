@@ -2,7 +2,7 @@
 /**
  * Creates Customizer options.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  * @subpackage ImpactRestoration/admin
@@ -16,7 +16,7 @@ abstract class ImpactRestoration_AdminCustomizer {
 	/**
 	 * Customizer panels.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var array
 	 */
@@ -25,7 +25,7 @@ abstract class ImpactRestoration_AdminCustomizer {
 	/**
 	 * Customizer sections.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var array
 	 */
@@ -34,7 +34,7 @@ abstract class ImpactRestoration_AdminCustomizer {
 	/**
 	 * Customizer controls.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var array
 	 */
@@ -43,7 +43,7 @@ abstract class ImpactRestoration_AdminCustomizer {
 	/**
 	 * Customizer settings.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @var array
 	 */
@@ -52,7 +52,7 @@ abstract class ImpactRestoration_AdminCustomizer {
 	/**
 	 * ImpactRestoration_AdminCustomizer constructor.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 */
 	function __construct() {
 
@@ -62,7 +62,7 @@ abstract class ImpactRestoration_AdminCustomizer {
 	/**
 	 * Adds all Customizer settings.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @param WP_Customize_Manager $wp_customize
 	 */
@@ -88,7 +88,7 @@ abstract class ImpactRestoration_AdminCustomizer {
 	/**
 	 * Adds Customizer panels.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @param array $panels
 	 * @param WP_Customize_Manager $wp_customize
@@ -115,7 +115,7 @@ abstract class ImpactRestoration_AdminCustomizer {
 	/**
 	 * Adds Customizer sections.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @param array $sections
 	 * @param WP_Customize_Manager $wp_customize
@@ -148,7 +148,7 @@ abstract class ImpactRestoration_AdminCustomizer {
 	/**
 	 * Adds Customizer controls.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @param array $controls
 	 * @param WP_Customize_Manager $wp_customize
@@ -198,7 +198,7 @@ abstract class ImpactRestoration_AdminCustomizer {
 	/**
 	 * Adds Customizer settings.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.0.0
 	 *
 	 * @param array $settings
 	 * @param WP_Customize_Manager $wp_customize

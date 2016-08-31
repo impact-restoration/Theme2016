@@ -2,7 +2,7 @@
 /**
  * The theme's search form.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  */

@@ -2,7 +2,7 @@
 /**
  * The theme's page file use for displaying pages.
  *
- * @since {{VERSION}}
+ * @since 1.0.0
  *
  * @package ImpactRestoration
  */
