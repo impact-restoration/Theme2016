@@ -20,7 +20,7 @@ if ( defined( 'THEME_VERSION' ) || defined( 'THEME_FONTS' ) ) {
 	wp_die( 'ERROR in Impact Restoration theme: There is a conflicting constant. Please either find the conflict or rename the constant.' );
 }
 
-define( 'THEME_VERSION', '1.0.0' );
+define( 'THEME_VERSION', '1.0.1' );
 define( 'THEME_FONTS', serialize( array(
 	'font-awesome' => 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css',
 	'open-sans'    => 'https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,800',

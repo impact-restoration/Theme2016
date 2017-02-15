@@ -1,13 +1,13 @@
 {
   "name": "ImpactRestoration",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "authors": [
     "Joel Worsham <joel@realbigmarketing.com>"
   ],
-  "description": "Theme for the 2016 Impact Restoration website..",
+  "description": "Theme for the 2016 Impact Restoration website.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/realbig/TH_IMPACT_REST.git"
+    "url": "https://github.com/impact-restoration/theme-2016.git"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
